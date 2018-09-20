@@ -35,19 +35,13 @@ Clone this repository, complete the following assingment and submit a pull reque
 * Output: None
 * Authorized Role: USER
    
-6. Add comment to todo item: 
-* URL: http://localhost:8080/todo/items/{itemId}/comments
-* Input: Comment
-* Output: List<Item>
-* Authorized Role: USER
-   
-7. List all todo items - most recent and pending first: 
+6. List all todo items - most recent and pending first: 
 * URL: http://localhost:8080/todo/items/all
 * Input: None
 * Output: List<Item>
 * Authorized Role: ADMIN
 
-**Write integration tests covering all 7 endpoints.**
+**Write integration tests covering all 6 endpoints.**
 
 TODO Item and Comment definition is :-
 
@@ -58,26 +52,22 @@ public class Item implements Serializable{
 	private Boolean done;
 	private Integer userId; // created by
 	private Date createdOn;
-	private List<Comment> comments;
-	
+
 	// getters and setters ...
 }
 
-public class Comment implements Serializable{
-	private Integer commnetId;
-	private String comment;
-	private Integer itemId;
-	private Date commentDate;
-	
-	// getters and setters ...
-}
 ```
 
 * Items should be saved to database. You can use embedded H2 database.
-* Users with role **USER can access endpoints 1-6** to manage **their personal** TODO items.
-* Users with role **ADMIN can access endpoint 7** to list TODO items from all users.
+* Users with role **USER can access endpoints 1-5** to manage **their own personal** TODO items.
+* Users with role **ADMIN can access endpoint 6** to list TODO items from all users.
 * Application has following users.
   * Ahmad with role (USER, ADMIN)
   * Belal with role USER 
 * You can use in memory user store of Spring Security for users and roles.
-
+* Create a simple UI to 
+  * Show logged in User
+  * List Todo Items of logged in User
+  * Option to Add new item, Remove Item and Mark the Item as Done
+  * List All Items (for ADMIN only)
+  
