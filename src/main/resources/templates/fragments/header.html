@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+<link rel="stylesheet" type="text/css" href="../static/css/guru.css" />
+</head>
+<body>
+
+	<div class="container">
+		<div th:fragment="header">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+						<ul class="nav navbar-nav">
+							<li><a href="#" th:href="@{/todolist}">Todo List</a></li>
+							<li><a href="#" th:href="@{/todolist/new}"
+								sec:authorize="hasAuthority('USER')">Create Todo</a></li>
+							<li><a href="#" th:href="@{/todolist/adminList}"
+								sec:authorize="hasAuthority('ADMIN')">Admin List</a></li>
+							<li><a href="#" th:href="@{/login}">Sign In</a></li>
+							<li><a href="#" th:href="@{/swagger-ui.html}">Documentation</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="welcome">
+				<span>Welcome <span sec:authentication="name"></span>
+				</span>
+
+
+
+			</div>
+			<div class="jumbotron">
+				<div class="row text-center">
+					<div class="">
+						<h2>Todo List</h2>
+
+						<h3>By Spring Boot Web App</h3>
+					</div>
+
+				</div>
+				<div>
+					<p>Available Users</p>
+					<ul>
+						<li>Ahmed / 1234</li>
+						<li>Belal / 1515</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

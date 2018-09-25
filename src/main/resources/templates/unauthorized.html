@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Todo List App</title>
+<link rel="stylesheet" type="text/css" href="../static/css/guru.css" />
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<div class="container">
+		<div layout:fragment="content" th:remove="tag">
+			<h1>You are not authorized to access this page!!!</h1>
+
+			<p>
+				<a href="/" th:href="@{/}">Back to home page</a>
+			</p>
+
+		</div>
+	</div>
+</body>
+</html>
