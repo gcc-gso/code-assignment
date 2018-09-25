@@ -58,7 +58,10 @@
 				<label class="col-sm-2 control-label">Created On:</label>
 
 				<div class="col-sm-10">
-					<input type="datetime-local" th:field="${todoItem.createdOn}" />
+					<!-- <input type="datetime-local" th:field="${todoItem.createdOn}" /> -->
+					
+					<p th:text="${#dates.format(todoItem.createdOn, 'dd-MMM-yyyy')}"></p>
+					
 				</div>
 			</div>
 		</form>

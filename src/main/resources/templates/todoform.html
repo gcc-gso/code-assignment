@@ -24,8 +24,10 @@
 		<div>
 			<form class="form-horizontal" th:object="${todo}"
 				th:action="@{/todo}" method="post">
-				<input type="hidden" th:field="*{itemId}" /> <input type="hidden"
-					th:field="*{userId}" />
+				
+				<input type="hidden" th:field="*{itemId}" /> 
+				<input type="hidden" th:field="*{userId}" />
+					
 
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Status:</label>

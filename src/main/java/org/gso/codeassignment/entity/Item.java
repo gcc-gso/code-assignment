@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -29,8 +27,7 @@ public class Item {
 	private Boolean done;
 	@Column(name = "USER_ID")
 	private Integer userId; // created by
-	
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "CREATED_ON")
 	private Date createdOn;
 

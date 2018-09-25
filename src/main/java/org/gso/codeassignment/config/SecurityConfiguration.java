@@ -32,6 +32,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				.antMatchers("/css/**", "/js/**").permitAll()
 				.antMatchers("/todolist/adminList").hasRole("ADMIN")
+				//.antMatchers("/todo/**/all").hasRole("ADMIN")
+				.antMatchers("/todo/**").hasRole("USER")
 				.antMatchers("/todolist", "/todolist/show/*", "/console/*", "/h2-console/**").permitAll().anyRequest()
 				.authenticated().and().formLogin().loginPage("/login").defaultSuccessUrl("/todolist").permitAll().and()
 				.logout().logoutSuccessUrl("/").permitAll().and().exceptionHandling().accessDeniedPage("/unauthorized");
